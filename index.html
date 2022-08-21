@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bg">
+        <div class="window">
+            <div class="window_ExtendRetension">
+                <div class="window_ExtendRetension_header">
+                    <div class="window_ExtendRetension_header_title">
+                        Extend Retension
+                    </div>
+                </div>
+                <div class="window_ExtendRetension_content">
+                    <div class="window_ExtendRetension_content_1">
+                        <div class="window_ExtendRetension_content_1_left">
+                            Extension Method:
+                        </div>
+                        <div class="window_ExtendRetension_content_1_right">
+                            <div class="SetTotalRentenssion">
+                                <input checked="checked" type="radio" name="extend_method" value="total"> Set the total rentention.
+                            </div>
+                            <div class="SetTotalRentenssion_img hidden">
+                                <img src="/img/Image_total retention.png" alt="">
+                            </div>
+                            <div class="AddExtraTime">
+                                <input  type="radio" name="extend_method" value="add"> Add extra time to original retension.
+                            </div>
+                            <div class="AddExtraTime_img hidden">
+                                <img src="/img/Image__extra time.png" alt="">
+                            </div>
+                            <div class="LockForever">
+                                <input  type="radio" name="extend_method" value="forever"> Lock forever.
+                            </div>
+                            <div class="LockForever_img hidden">
+                                <img src="/img/Image_lock forever.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="window_ExtendRetension_content_2">
+                        <div class="window_ExtendRetension_content_2_left">
+                            Extension Period:
+                        </div>
+                        <div class="window_ExtendRetension_content_2_right">
+                            <input type="number" name="extend_period" min="0" max="65532" value="5">
+                            <select name="extend_period_unit" value="year">
+                                <option value="year"selected>year(s)</option>
+                                <option value="month">month(s)</option>
+                                <option value="day" >day(s)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="window_ExtendRetension_content_example">
+                        <span id="example">
+                            If the file's original retension is 3 years. The new retension will be 5 year(s) 0 month(s) 0 day(s).
+                        </span>
+                    </div>
+                    <div class="window_ExtendRetension_content_3">
+                        <spn class="worn">Important: </spn><span>The retension period can only be extend but not shorten.</span>
+                    </div>
+                </div>
+                <div class="window_ExtendRetension_SaveCancel">
+                    <div class="window_ExtendRetension_SaveCancel_left"></div>
+                    <div class="window_ExtendRetension_SaveCancel_right">
+                        <button id="cancel" type="button">Cancel</button>
+                        <button id="save" type="button">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="change"><img src="/img/change.png" alt="" src="/index2.html"></div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
