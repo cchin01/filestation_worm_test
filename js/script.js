@@ -3,6 +3,7 @@ const period = document.querySelector('input[name="extend_period"]');
 const periodUnit = document.querySelector('select[name="extend_period_unit"]');
 const example = document.querySelector('#example');
 const change = document.querySelector(`.change`);
+const resetTotal = document.querySelector(`#reset_total`);
 
 /* 看 example 有沒有被 hidden 來判斷目前狀態 */
 const statuscheck = document.querySelector(".window_ExtendRetension_content_example");
@@ -138,6 +139,7 @@ change.addEventListener("click", (e) => {
         forever_img.classList.add("hidden");
     }else {
         statuscheck.classList.add("hidden");
+        resetTotal.checked = true;
         total_img.classList.remove("hidden");
     }
 });
