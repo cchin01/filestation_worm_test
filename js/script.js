@@ -4,6 +4,7 @@ const periodUnit = document.querySelector('select[name="extend_period_unit"]');
 const example = document.querySelector('#example');
 const change = document.querySelector(`.change`);
 const resetTotal = document.querySelector(`#reset_total`);
+const ExtensionPeriod = document.querySelector('.window_ExtendRetension_content_2');
 
 /* 看 example 有沒有被 hidden 來判斷目前狀態 */
 const statuscheck = document.querySelector(".window_ExtendRetension_content_example");
@@ -31,26 +32,20 @@ let caculate = function() {
         if (extend_period_unit == "year") {
             if (extend_period < origin_period){
                 outcome_days = origin_period*360;
-                console.log(`1`);
             }else {
                 outcome_days = extend_period*360;
-                console.log(`2`);
             }
         }else if (extend_period_unit == "month") {
             if (extend_period*30 < origin_period*360){
                 outcome_days = origin_period*360;
-                console.log(`3`);
             }else {
                 outcome_days = extend_period*30;
-                console.log(`4`);
             }
         }else {
             if (extend_period < origin_period*360){
                 outcome_days = origin_period*360;
-                console.log(`5`);
             }else {
                 outcome_days = extend_period;
-                console.log(`6`);
             }
         }
     }else if (method == "add"){
@@ -92,27 +87,27 @@ for (const radio of radios) {
                 total_img.classList.add("hidden");
                 forever_img.classList.add("hidden");
                 total_img.classList.remove("hidden");
-                console.log("dddd");
-                console.log(e.target.value);
             }else if (e.target.value=="add"){
                 add_img.classList.add("hidden");
                 total_img.classList.add("hidden");
                 forever_img.classList.add("hidden");
                 add_img.classList.remove("hidden");
-                console.log("eee");
-                console.log(e.target.value);
             }else {
                 add_img.classList.add("hidden");
                 total_img.classList.add("hidden");
                 forever_img.classList.add("hidden");
                 forever_img.classList.remove("hidden");
-                console.log("ffff");
-                console.log(e.target.value);
             }
         } else {
             console.log(e.target.value);
             caculate();
             message();
+        }
+        
+        if (e.target.value == `forever`){
+            ExtensionPeriod.classList.add(`hidden`);
+        }else{
+            ExtensionPeriod.classList.remove(`hidden`);
         }
     }
   }
@@ -128,7 +123,6 @@ periodUnit.addEventListener("change", function() {
     extend_period_unit = document.querySelector('select[name="extend_period_unit"]').value;
     caculate();
     message();
-    console.log(extend_period_unit);
 });
 
 change.addEventListener("click", (e) => {
@@ -141,5 +135,6 @@ change.addEventListener("click", (e) => {
         statuscheck.classList.add("hidden");
         resetTotal.checked = true;
         total_img.classList.remove("hidden");
+        ExtensionPeriod.classList.remove(`hidden`);
     }
 });
